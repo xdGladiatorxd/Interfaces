@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Exercise 1</title>
+<style>
+    *{
+        font-size: 30px;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: gray;
+    }
+    header{
+        border: 1px yellow solid;
+        background-color: rgb(238, 234, 199);
+        padding-bottom: 60px;
+    }
+    .horizontal{
+        border: 1px blue solid;
+        background-color: rgb(180, 180, 255);
+        padding: 10px;
+    }
+    main{
+        display: flow-root;
+        border: 1px yellow solid;
+        background-color: rgb(214, 207, 138);
+        width: 100%;
+    }
+    section{
+        border: 1px black solid;
+        background-color: blueviolet;
+    }
+    footer{
+        border: 1px yellow solid;
+        background-color: rgb(238, 234, 199);
+        padding-bottom: 60px;
+    }
+    h1{
+        font-size: 50px;
+    }
+    header, nav, main, footer{
+        padding-left: 10px;
+    }
+    #flex{
+        display: flex;
+	    flex-flow: row;
+    }
+    #flex>section{
+        flex: 1 1 50%;
+        align-self: flex-start;
+    }
+</style>
+</head>
+<body>
+    <header>Capçalera</header>
+    <nav class="horizontal">Menú de navegació horitzontal</nav>
+    <main>
+        <h1>Ací podria anar breadcrum</h1>
+        <div id="flex">
+        <section><h2>Títol h2.</h2>Estem dins d'un section que ocupa el 50% del seu contenidor</section>
+        <section><h2>Títol h2.</h2>Aquest section ocupa l'altre 50% del seu contenidor que és main</section>
+        </div>
+    </main>
+    <footer>Peu de pàgina</footer>
+</body>
+</html>

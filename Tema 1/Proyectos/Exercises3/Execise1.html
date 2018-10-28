@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Exercise 1</title>
+<style>
+    *{
+        font-size: 30px;
+        border-radius: 10px;
+        box-sizing:border-box;
+    }
+    body{
+        background-color: gray;
+    }
+    header{
+        border: 1px yellow solid;
+        background-color: rgb(238, 234, 199);
+        padding-bottom: 60px;
+    }
+    nav{
+        border: 1px blue solid;
+        background-color: rgb(180, 180, 255);
+        width: 10%;
+        padding-right: 30px;
+    }
+    main{
+        border: 1px yellow solid;
+        background-color: rgb(214, 207, 138);
+        width: 86%;
+    }
+    footer{
+        border: 1px yellow solid;
+        background-color: rgb(238, 234, 199);
+        padding-bottom: 60px;
+    }
+    h1{
+        font-size: 60px;
+    }
+    span{
+        font-size: 55px;
+    }
+    header, nav, main, footer{
+        padding-left: 10px;
+    }
+    #flex{
+        display: flex;
+	    flex-flow: row;
+    }
+    #flex>nav{
+        flex: 1 1 10%;
+        align-self: flex-start;
+    }
+    #flex>main{
+        flex: 1 1 90%;
+    }
+</style>
+</head>
+<body>
+    <header>Capçalera</header>
+    <div id="flex">
+    <nav>Menú de navegació lateral</nav>
+    <main>
+        <h1>Títol h1.</h1>Text de 1em<br><span>Text de 2 em</span>
+    </main>
+    </div>
+    <footer>Peu de pàgina</footer>
+</body>
+</html>

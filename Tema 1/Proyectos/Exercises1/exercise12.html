@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>1_Primer ejemplo</title>
+		<style type="text/css">
+			*{box-sizing: border-box;} /* La propiedad box-sizing Nos ahorrará muchos dolores de cabeza, con el valor border-box el border y el padding no incrementan el ancho de la caja
+			http://es.learnlayout.com/box-sizing.html y +info -> https://developer.mozilla.org/es/docs/Web/CSS/box-sizing
+			Si comentáis la propiedad veréis que las cajas ensanchan en 1px y se empujan unas a otras forzando su aparición en columna*/
+			body{
+				width: 52%; /*para que nos ocupe un 90% del espacio total del Firefox*/
+				max-width: 950px; /*Comentad este elemento y maximizad el navegador, veréis que las cajas se estiran en exceso*/
+				min-width: 450px; /*Comentad este elemento y minimizad el navegador, veréis que los textos se superponen*/
+				margin: auto; /*para que centre el body en el navegador. Quitadlo y probad*/
+			}
+			header, #nav1 {
+				border: 1px solid green;
+				border-radius: 15px;
+				padding-left: 1em;
+			}
+			#nav2{
+				border: 1px dotted blue;
+				border-radius: 15px;
+				padding-left: 1em;
+				width: 100px;
+				float: left;
+			}
+			aside{
+				float: left;
+				border: 1px dotted yellow;
+				width: 20%; /*haced la ventana pequeña, veréis que pasa con el contenido de aside ¿cómo evitarlo?*/
+			}
+			main{
+				border:1px dashed red;
+				/*podemos eliminar y poner solo la de abajo, probad float con los valores left y right*/ 
+				/*float: right; /*¿qué pasas si lo descomentamos? Pues que tendremos que descomentar la propiedad clear del footer ya que al estar flotando el aside y el main, el footer subiría hasta tropezar con el primer elemento que no flote, en este caso el nav*/
+				width: 86%;
+				float: left;
+			}
+			footer{
+				clear: both;
+				border: 1px solid navy;
+				border-radius: 15px;
+				padding-left: 1em;
+				/*clear: both; /*teniendo el main y el aside flotantes, quitad esta propiedad y ver el efecto https://developer.mozilla.org/es/docs/Web/CSS/clear*/
+			}
+			.article{
+				padding-left: 10px;
+				column-count: 3;
+				column-gap: 40px;
+				column-rule: 4px dotted blue;
+				padding-left: 8px;
+				padding-right: 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>Cabecera</header>
+		<nav id="nav1">Menú de Navegación</nav>
+		<nav id="nav2">Lateral</nav>
+		<main>
+			<article class="article"> 
+				<p>El lenguaje HTML puede ser creado y editado con cualquier editor de textos básico, como puede ser Gedit en GNU/Linux, el Bloc de notas de Windows, o cualquier otro editor que admita texto sin formato como GNU Emacs, Microsoft Wordpad, TextPad, Vim, Notepad++, entre otros.
+
+					Existen, además, otros editores para la realización de sitios web con características WYSIWYG (What You See Is What You Get, o en español: «lo que ves es lo que obtienes»). Estos editores permiten ver el resultado de lo que se está editando en tiempo real, a medida que se va desarrollando el documento. Ahora bien, esto no significa una manera distinta de realizar sitios web, sino que una forma un tanto más simple, ya que estos programas, además de tener la opción de trabajar con la vista preliminar, tiene su propia sección HTML, la cual va generando todo el código a medida que se va trabajando. Algunos ejemplos de editores WYSIWYG son KompoZer, Microsoft FrontPage o Adobe Dreamweaver.
+					
+					Combinar estos dos métodos resulta muy interesante, ya que de alguna manera se ayudan entre sí. Por ejemplo, si se edita todo en HTML y el desarrollador olvida algún código o etiqueta, basta con dirigirse al editor visual o WYSIWYG y se continúa ahí la edición o viceversa, ya que hay casos en que resulta más rápido y fácil escribir directamente el código de alguna característica que el usuario desea adherir al sitio que buscar la opción en el programa mismo.
+					
+					Existe otro tipo de editores HTML llamados WYSIWYM que dan más importancia al contenido y al significado que a la apariencia visual. Entre los objetivos que tienen estos editores es la separación del contenido y la presentación, fundamental en el diseño web.
+					
+					HTML utiliza etiquetas o marcas, que consisten en breves instrucciones de comienzo y final, mediante las cuales se determina la forma en la que debe aparecer en su navegador el texto, así como también las imágenes y los demás elementos, en la pantalla del ordenador.</p> 
+		 </article>
+		</main>
+		<footer>Pie de página</footer>
+	</body>
+</html>

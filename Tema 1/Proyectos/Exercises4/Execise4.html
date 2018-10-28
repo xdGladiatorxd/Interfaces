@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Exercise 1</title>
+<style>
+    *{
+        font-size: 30px;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: gray;
+        display: flex;
+    }
+    header{
+        border: 1px yellow solid;
+        background-color: rgb(238, 234, 199);
+        padding-bottom: 60px;
+    }
+    .horizontal{
+        border: 1px blue solid;
+        background-color: rgb(180, 180, 255);
+        padding: 10px;
+    }
+    main{
+        display: flow-root;
+        border: 1px yellow solid;
+        background-color: rgb(214, 207, 138);
+        width: 100%;
+    }
+    section{
+        border: 1px black solid;
+        background-color: blueviolet;
+    }
+    footer{
+        border: 1px yellow solid;
+        background-color: rgb(238, 234, 199);
+        padding-bottom: 60px;
+    }
+    h1{
+        font-size: 50px;
+    }
+    header, nav, main, footer{
+        padding-left: 10px;
+    }
+    .container {
+        display: grid;
+        width:100%;
+        grid-template-columns: 88% 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+        "header header"
+        "horizontal horizontal"
+        "main main"
+        "footer footer";
+    }
+    header { grid-area: header;}
+.horizontal { grid-area: horizontal;}
+main { grid-area: main;}
+footer { grid-area: footer;}
+main {
+        display: grid;
+        width:100%;
+        grid-template-columns: 50% 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+        "h1 h1"
+        "section1 section2"
+    }
+    .h1 { grid-area: h1;}
+.section1 { grid-area: section1;}
+.section2 { grid-area: section2;}
+</style>
+</head>
+<body>
+    <div class="container">
+    <header>Capçalera</header>
+    <nav class="horizontal">Menú de navegació horitzontal</nav>
+    <main>
+        <h1 class="h1">Ací podria anar breadcrum</h1>
+        <section class="section1"><h2>Títol h2.</h2>Estem dins d'un section que ocupa el 50% del seu contenidor</section>
+        <section class="section2"><h2>Títol h2.</h2>Aquest section ocupa l'altre 50% del seu contenidor que és main</section>
+    </main>
+    <footer>Peu de pàgina</footer>
+    </div>
+</body>
+</html>

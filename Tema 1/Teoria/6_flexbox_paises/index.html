@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Demos Emenia - El uso de FlexBox</title>
+  <meta name="description" content="Ejemplos de uso de FlexBox.">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/default.css">
+  <style>
+		/*** CSS Flexible Layout Module - Caja Flexible - */
+		#viajes { /*El div viajes es una caja contenedora de elementos flexibles*/
+			display: flex;
+			flex-flow: row wrap; /*la disposición será de elementos en línea, pudiendo hacer salto de línea*/
+		}
+		.dos{
+			background-color: #b6ebb3;
+			flex: 1; /*Sumamos todos los flex-item que hayan, total 3, pues este ocupará 1/3 del total*/
+			order: 2;
+		}
+		.uno {
+			background-color: #bacee3;
+			flex: 1;
+			order: 3;
+		}
+		.tres {
+			background-color: #7ebdbb;
+			flex: 1;
+			order: 1;
+		}
+		.viajes-item {/*El div viajes-item contenido dentro de #viajes, a su vez es una caja contenedora de elementos flexibles*/
+			display: flex;
+			flex-direction: column; /*con disposición de elementos (flex item) en columna*/
+		}
+		.viajes-item > img {
+			order: -1; /*Pese a estar en código al final, haremos que la imagen aparezca como primer elemento*/
+			align-self: center;
+		}
+		.viajes-item > button {
+			margin-top: auto;
+			width: 30%;
+			align-self: center;
+		}
+		@media all and (max-width: 700px) {
+			#viajes { flex-direction: column; }
+			.viajes-item{
+				order: 0;
+				min-width: 200px;
+			}
+			#cabecera{display: none;}
+			.home{min-width: 200px;}
+		}
+		@media all and (max-width:400px){
+			p{display: none;}
+		}
+</style>
+
+</head>
+<body class="home">
+	<div id="cabecera">
+		<div id="contenido-cabecera">
+			<div id="logo">
+				<a href="http://www.emenia.es">Emenia</a>
+			</div>
+			<img src="images/logo_demos.png" alt="Logo Demos" />
+		</div>
+	</div>
+	<h1>Demo de CSS Flexible Layout (Flexbox) o Caja flexible con CSS</h1>
+	<a href="http://www.emenia.es/blog/" title="Volver al artículo sobre FlexBox" class="volver">Volver al art&iacute;culo</a>
+	
+	<section id='viajes'><!--Al pasar el validador echa en falta un heading por sección-->
+	  <section class='viajes-item uno'>
+	    <h2>Malta, la isla mediterránea por conocer</h2>
+	    <p style="order:-2;">Dignissim placerat vel aenean porta, magna ac scelerisque facilisis, rhoncus est! Urna pulvinar dolor lorem purus dapibus quis vut! Hac nunc vel ridiculus enim magnis mid phasellus! Duis et pellentesque lacus urna diam? Sed phasellus, pellentesque mauris ac phasellus lacus augue enim! Penatibus, porta, sit dis et adipiscing eu, nisi ac. </p>
+	    <img src='images/malta.jpg' alt='' />
+	    <button>MÁS INFO</button>
+	  </section>
+	  <section class='viajes-item dos'>
+	    <h2>Polonia, un país por descubrir</h2>
+	    <p>Dignissim placerat vel aenean porta, magna ac scelerisque facilisis.</p>
+	    <img src='images/oporto.jpg' alt='' />
+	    <button>MÁS INFO</button>
+	  </section>
+	  <section class='viajes-item tres'>
+	    <h2>Un paseo por el viejo Oporto</h2>
+	    <p>Cras quis mattis. Elementum, lectus magna, amet dis dis pulvinar scelerisque proin montes quis tempor placerat enim nec dictumst elementum nec augue! Dignissim non enim. </p>
+	    <img src='images/polonia.jpg' alt='' />
+	    <button>MÁS INFO</button>
+	  </section>
+	</section>
+
+</body>
+</html>
+

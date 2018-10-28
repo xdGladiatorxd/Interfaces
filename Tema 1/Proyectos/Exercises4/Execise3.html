@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Exercise 1</title>
+<style>
+    *{
+        font-size: 30px;
+        border-radius: 10px;
+        box-sizing:border-box;
+    }
+    body{
+        background-color: gray;
+        display: flex;
+    }
+    header{
+        border: 1px yellow solid;
+        background-color: rgb(238, 234, 199);
+        padding-bottom: 60px;
+    }
+    .horizontal{
+        border: 1px blue solid;
+        background-color: rgb(255, 255, 148);
+        padding: 10px;
+    }
+    .lateral{
+        border: 1px blue solid;
+        background-color: rgb(180, 180, 255);
+        padding-right: 30px;
+        align-self: flex-start;
+    }
+    main{
+        border: 1px yellow solid;
+        background-color: rgb(214, 207, 138);
+    }
+    footer{
+        border: 1px yellow solid;
+        background-color: rgb(238, 234, 199);
+        padding-bottom: 60px;
+    }
+    h1{
+        font-size: 60px;
+    }
+    span{
+        font-size: 2em;
+    }
+    header, nav, main, footer{
+        padding-left: 10px;
+    }
+    .container {
+        display: grid;
+        width:100%;
+        grid-template-columns: 12% 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+        "header header"
+        "horizontal horizontal"
+        "lateral main"
+        "footer footer";
+    }
+    header { grid-area: header;}
+    .horizontal { grid-area: horizontal;}
+.lateral { grid-area: lateral;}
+main { grid-area: main;}
+footer { grid-area: footer;}
+</style>
+</head>
+<body>
+    <div class="container">
+    <header>Capçalera</header>
+    <nav class="horizontal">Menú de navegació horitzontal</nav>
+    <nav class="lateral">Menú de navegació lateral</nav>
+    <main>
+        <h1>Títol h1.</h1>Text de 1em<br><span>Text de 2 em</span>
+    </main>
+    <footer>Peu de pàgina</footer>
+    </div>
+</body>
+</html>

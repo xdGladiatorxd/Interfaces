@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>1_Primer ejemplo</title>
+		<style type="text/css">
+			*{box-sizing: border-box;} /* La propiedad box-sizing Nos ahorrará muchos dolores de cabeza, con el valor border-box el border y el padding no incrementan el ancho de la caja
+			http://es.learnlayout.com/box-sizing.html y +info -> https://developer.mozilla.org/es/docs/Web/CSS/box-sizing
+			Si comentáis la propiedad veréis que las cajas ensanchan en 1px y se empujan unas a otras forzando su aparición en columna*/
+			body{
+				width: 52%; /*para que nos ocupe un 90% del espacio total del Firefox*/
+				max-width: 950px; /*Comentad este elemento y maximizad el navegador, veréis que las cajas se estiran en exceso*/
+				min-width: 450px; /*Comentad este elemento y minimizad el navegador, veréis que los textos se superponen*/
+				margin: auto; /*para que centre el body en el navegador. Quitadlo y probad*/
+			}
+			header, #nav1 {
+				border: 1px solid green;
+				border-radius: 15px;
+				padding-left: 1em;
+			}
+			#nav2{
+				border: 1px dotted blue;
+				padding-left: 1em;
+				width: 100px;
+				float: left;
+			}
+			aside{
+				float: right;
+				border: 1px dotted yellow;
+				width: 20%; /*haced la ventana pequeña, veréis que pasa con el contenido de aside ¿cómo evitarlo?*/
+			}
+			main{
+				border:1px dashed red;
+				/*podemos eliminar y poner solo la de abajo, probad float con los valores left y right*/ 
+				/*float: right; /*¿qué pasas si lo descomentamos? Pues que tendremos que descomentar la propiedad clear del footer ya que al estar flotando el aside y el main, el footer subiría hasta tropezar con el primer elemento que no flote, en este caso el nav*/
+				width: 86%;
+				float: left;
+			}
+			footer{
+				clear: both;
+				border: 1px solid navy;
+				border-radius: 15px;
+				padding-left: 1em;
+				/*clear: both; /*teniendo el main y el aside flotantes, quitad esta propiedad y ver el efecto https://developer.mozilla.org/es/docs/Web/CSS/clear*/
+			}
+			.article{
+				padding-left: 10px;
+				border: 1px dotted blue;
+				width: 80%;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<header>Cabecera</header>
+		<nav id="nav1">Menú 1, de Navegación</nav>
+		<nav id="nav2">Menú 2, de opciones</nav>
+		<main>
+			<h1>Contenido principal (main) con h1</h1>
+			<article class="article"> 
+				  <h2>Título artículo 1 con h2</h2> 
+				  <p>Este primer artículo trata de las propiedades float y clear de los bloques html. 
+				<br />Recordemos que si ponemos margin o padding, estos se suman al ancho (width) total del modelo de caja, por lo tanto hará que la caja de la derecha sea empujada.</p> 
+			</article>
+			<aside>Aquí colocaré toda la publicidad relacionada con estos artículos, aunque lo podría haber sacado fuera del main. Tiene un padding de 0.3em</aside>
+			<article class="article"> 
+				   <h2>Título artículo 2 con h2</h2> 
+				   <p>Este segundo artículo trata de las propiedades column para poder estructurar nuestros textos largos en modo artículos periodísticos.</p> 
+			</article>
+		</main>
+		<footer>Pie de página</footer>
+	</body>
+</html>
